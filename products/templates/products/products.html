@@ -11,13 +11,13 @@
                         <div class="card h-100">
                             <!-- New badge-->
                             {% if product.selling_price < product.original_price %}
-                            <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Sale</div>
+                            <div class="badge bg-danger text-white position-absolute" style="top: 0.5rem; right: 0.5rem;">Sale</div>
                             {% elif product.new == True %}
-                            <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">New</div>
+                            <div class="badge bg-success text-white position-absolute" style="top: 0.5rem; right: 0.5rem">New</div>
                             {% endif %}
                             {% if product.image %}
                             <!-- Product image-->
-                            <img class="card-img-top" src="{{ product.image.url }}" alt="{{ product.name }}" />
+                            <img class="card-img-top card-image" src="{{ product.image.url }}" alt="{{ product.name }}" />
                             {% else %}
                             <img class="card-img-top" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}" />
                             {% endif %}
