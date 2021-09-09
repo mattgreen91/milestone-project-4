@@ -5,7 +5,7 @@
         <!-- Section-->
         <section class="py-5">
             <div class="container px-4 px-lg-5 mt-5">
-                <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+                <div class="row gx-4 gx-lg-5 row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
                     {% for product in products|dictsort:'name.lower' %}
                     <div class="col mb-5">
                         <div class="card h-100">
@@ -50,9 +50,11 @@
                                         <div class="bi-star-fill"></div>
                                         {% endif %}
                                     </div>
+                                    <!-- Product age -->
+                                    Age: {{ product.age }} </br>
                                     <!-- Product price-->
-                                    {% if product.original_price == product.selling_price %}
-                                    £{{ product.price }}
+                                    Price: {% if product.original_price == product.selling_price %}
+                                    £{{ product.original_price }}
                                     {% else %}
                                     <span class="text-muted text-decoration-line-through">£{{ product.original_price }}</span>
                                     £{{ product.selling_price }}
