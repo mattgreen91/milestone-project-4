@@ -1,4 +1,5 @@
 {% load static %}
+{% if request.user.is_authenticated %}
 <div class="col-12 my-auto py-1 py-lg-0 searchbar-center">
     <form method="GET" action="{% url 'products' %}">
         <div class="input-group w-100">
@@ -13,3 +14,4 @@
         </div>
     </form>
 </div>
+{% endif %}
