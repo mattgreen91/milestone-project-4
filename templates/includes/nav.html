@@ -10,14 +10,14 @@
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Shop</a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="#!">All Games</a></li>
+                        <li><a class="dropdown-item" href="{% url 'products' %}">All Games</a></li>
                         <li><hr class="dropdown-divider" /></li>
-                        <li><a class="dropdown-item" href="#!">PC</a></li>
-                        <li><a class="dropdown-item" href="#!">Nintendo Switch</a></li>
-                        <li><a class="dropdown-item" href="#!">Playstation 4</a></li>
-                        <li><a class="dropdown-item" href="#!">Playstation 5</a></li>
-                        <li><a class="dropdown-item" href="#!">Xbox One Series</a></li>
-                        <li><a class="dropdown-item" href="#!">Xbox X Series</a></li>
+                        <li><a class="dropdown-item" href="{% url 'products' %}?category=PC">PC</a></li>
+                        <li><a class="dropdown-item" href="{% url 'products' %}?category=Switch">Nintendo Switch</a></li>
+                        <li><a class="dropdown-item" href="{% url 'products' %}?category=PS4">Playstation 4</a></li>
+                        <li><a class="dropdown-item" href="{% url 'products' %}?category=PS5">Playstation 5</a></li>
+                        <li><a class="dropdown-item" href="{% url 'products' %}?category=XBOX1">Xbox One Series</a></li>
+                        <li><a class="dropdown-item" href="{% url 'products' %}?category=XBOXX">Xbox X Series</a></li>
                         {% if request.user.is_superuser %}
                         <li><hr class="dropdown-divider" /></li>
                         <li><a class="dropdown-item" href="#!">Manage Games</a></li>

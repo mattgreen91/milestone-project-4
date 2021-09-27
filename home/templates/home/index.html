@@ -6,8 +6,12 @@
         <div class="bg-primary py-5">
             <div class="container px-4 px-lg-5 my-5">
                 <div class="text-center text-white">
+                    {% if request.user.is_authenticated %}
                     <h1 class="display-4 fw-bolder">See the latest games in store now</h1>
                     <button type="button" class="btn btn-dark shop-now" onclick="location.href='{% url 'products' %}'">Shop Now</button>
+                    {% else %}
+                    <h1 class="display-4 fw-bolder">Please login or register to access the store</h1>
+                    {% endif %}
                 </div>
             </div>
         </div>
