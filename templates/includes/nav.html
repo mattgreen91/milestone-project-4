@@ -32,8 +32,8 @@
                 {% endif %}
             </ul>
             {% if request.user.is_authenticated %}
-            <form class="d-flex">
-                <button class="btn btn-outline-dark" type="submit">
+            <a href="{% url 'view_basket' %}" class="d-flex" style="text-decoration: none;">
+                <div class="btn btn-outline-dark">
                     <i class="bi-cart-fill me-1"></i>
                     Basket &nbsp;
                     <p class="my-0">
@@ -43,8 +43,8 @@
                             £0.00
                         {% endif %}
                     </p>
-                </button>
-            </form>
+                </div>
+            </a>
             {% endif %}
         </div>
     </div>
