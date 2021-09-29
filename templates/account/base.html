@@ -18,15 +18,16 @@
         <link rel="stylesheet" href="{% static 'css/base.css' %}">
     </head>
     <body>
-        <!-- Navigation-->
-        {% include 'includes/nav.html' %}
-        <!-- Header-->
-        {% include 'includes/header.html' %}
-        </header>
-        <!-- Search -->
-        {% include 'includes/search.html' %}
-        {% block content %}
-        {% endblock %}
+        <div style="min-height: 85vh">
+            <!-- Navigation-->
+            {% include 'includes/nav.html' %}
+            <!-- Header-->
+            {% include 'includes/header.html' %}
+            <!-- Search -->
+            {% include 'includes/search.html' %}
+            {% block content %}
+            {% endblock %}
+        </div>
         <!-- Footer-->
         <footer class="py-5 bg-primary">
             <div class="container"><p class="m-0 text-center text-white">Copyright &copy; Game Store 2021</p></div>
