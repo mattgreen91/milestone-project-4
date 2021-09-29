@@ -62,17 +62,17 @@ def all_products(request):
         return redirect('home')
 
 
-def product_detail(request, product_id):
+def product_detail(request, product_sku):
     """ A view to show individual product details """
 
     if request.user.is_authenticated:
-        product = get_object_or_404(Product, pk=product_id)
+        product = get_object_or_404(Product, sku=product_sku)
 
         context = {
             'product': product,
         }
 
-        return render(request, 'products/products.html', context)
+        return render(request, 'products/product_detail.html', context)
 
     else:
         return redirect('home')
