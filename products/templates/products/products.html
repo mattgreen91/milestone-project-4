@@ -3,10 +3,25 @@
 
 {% block content %}
         <!-- Section-->
+        <br />
+        
+        <div class="dropdown text-center">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Sort by
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <a class="dropdown-item" href="{% url 'products' %}?sort=name&direction=asc">Name</a>
+              <a class="dropdown-item" href="{% url 'products' %}?sort=selling_price&direction=asc">Price (lowest first)</a>
+              <a class="dropdown-item" href="{% url 'products' %}?sort=selling_price&direction=desc">Price (highest first)</a>
+              <a class="dropdown-item" href="{% url 'products' %}?sort=age&direction=asc">Age</a>
+              <a class="dropdown-item" href="{% url 'products' %}?sort=rating&direction=desc">Rating</a>
+            </div>
+          </div>
+
         <section class="py-5">
             <div class="container px-4 px-lg-5 mt-5">
                 <div class="row gx-4 gx-lg-5 row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
-                    {% for product in products|dictsort:'name.lower' %}
+                    {% for product in products %}
                     <div class="col mb-5">
                         <div class="card h-100">
                             <!-- Console badge -->
