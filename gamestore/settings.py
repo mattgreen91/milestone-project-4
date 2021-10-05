@@ -75,6 +75,9 @@ TEMPLATES = [
                 'django.contrib.messages.context_processors.messages',
                 'basket.context.basket_contents',
             ],
+            'libraries':{
+            'basket_tools': 'basket.templatetags.basket_tools',
+            }
         },
     },
 ]
