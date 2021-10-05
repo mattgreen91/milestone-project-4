@@ -10,14 +10,14 @@
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Shop</a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="{% url 'products' %}">All Games</a></li>
+                        <li><a class="dropdown-item" href="{% url 'products' %}?sort=name&direction=asc">All Games</a></li>
                         <li><hr class="dropdown-divider" /></li>
-                        <li><a class="dropdown-item" href="{% url 'products' %}?category=PC">PC</a></li>
-                        <li><a class="dropdown-item" href="{% url 'products' %}?category=Switch">Nintendo Switch</a></li>
-                        <li><a class="dropdown-item" href="{% url 'products' %}?category=PS4">Playstation 4</a></li>
-                        <li><a class="dropdown-item" href="{% url 'products' %}?category=PS5">Playstation 5</a></li>
-                        <li><a class="dropdown-item" href="{% url 'products' %}?category=XBOX1">Xbox One Series</a></li>
-                        <li><a class="dropdown-item" href="{% url 'products' %}?category=XBOXX">Xbox X Series</a></li>
+                        <li><a class="dropdown-item" href="{% url 'products' %}?category=PC&sort=name&direction=asc">PC</a></li>
+                        <li><a class="dropdown-item" href="{% url 'products' %}?category=Switch&sort=name&direction=asc">Nintendo Switch</a></li>
+                        <li><a class="dropdown-item" href="{% url 'products' %}?category=PS4&sort=name&direction=asc">Playstation 4</a></li>
+                        <li><a class="dropdown-item" href="{% url 'products' %}?category=PS5&sort=name&direction=asc">Playstation 5</a></li>
+                        <li><a class="dropdown-item" href="{% url 'products' %}?category=Xbox%201&sort=name&direction=asc">Xbox One Series</a></li>
+                        <li><a class="dropdown-item" href="{% url 'products' %}?category=Xbox%20X&sort=name&direction=asc">Xbox X Series</a></li>
                         {% if request.user.is_superuser %}
                         <li><hr class="dropdown-divider" /></li>
                         <li><a class="dropdown-item" href="#!">Manage Games</a></li>
