@@ -16,7 +16,7 @@
     <div class="row">
         <div class="col">
             {% if basket_products %}
-                <div class="table-responsive rounded">
+                <div class="table-responsive rounded" style="overflow-x: hidden;">
                     <table class="table table-sm table-borderless">
                         <thead class="text-black">
                             <tr>
@@ -24,6 +24,8 @@
                                 <th scope="col"></th>
                                 <th scope="col">Price</th>
                                 <th scope="col">Quantity</th>
+                                <th scope="col"></th>
+                                <th scope="col"></th>
                                 <th scope="col">Subtotal</th>
                             </tr>
                         </thead>
@@ -35,12 +37,15 @@
                                 </td>
                                 <td class="py-3">
                                     <p class="my-0"><strong>{{ product.product.name }}</strong></p>
+                                    <p class="my-0 small text-muted">Console: {{ product.product.category.friendly_name }}</p>
+                                    <p class="my-0 small text-muted">Age: {{ product.product.age }}</p>
+                                    &nbsp;
                                     <p class="my-0 small text-muted">SKU: {{ product.product.sku|upper }}</p>
                                 </td>
                                 <td class="py-3">
                                     <p class="my-0">£{{ product.product.selling_price }}</p>
                                 </td>
-                                <td class="py-3 w-25">
+                                <td class="py-3">
                                     <form class="form update-form" method="POST" action="{% url 'modify_basket' product.product_sku %}">
                                         {% csrf_token %}
                                         <div class="form-group">
@@ -56,7 +61,7 @@
                                                 <input class="form-control form-control-sm qty_input" type="number"
                                                     name="quantity" value="{{ product.quantity }}" min="1" max="99"
                                                     data-item_id="{{ product.product_sku }}"
-                                                    id="id_qty_{{ product.product_sku }}">
+                                                    id="id_qty_{{ product.product_sku }}" style="max-width: 50px;">
                                                 <div class="input-group-append">
                                                     <button class="increment-qty btn btn-sm btn-black rounded-0"
                                                         data-item_id="{{ product.product_sku }}" id="increment-qty_{{ product.product_sku }}">
@@ -68,48 +73,52 @@
                                             </div>
                                         </div>
                                     </form>
-                                    <a class="update-link text-info"><small>Update</small></a>
+                                </td>
+                                <td class="py-3">
+                                    <a class="btn btn-warning btn-outline-dark" href="">Update <i class="fas fa-sync-alt"></i></a>
+                                </td>
+                                <td class="py-3">
+                                    <a class="btn btn-danger btn-outline-dark" href="">Remove <i class="fas fa-trash-alt"></i></a>
                                 </td>
                                 <td class="py-3">
                                     <p class="my-0">£{{ product.product.selling_price | calc_subtotal:product.quantity }}</p>
                                 </td>
                             </tr>
                         {% endfor %}
-                        <tr>
-                            <td colspan="5" class="pt-5 text-right">
-                                <h6><strong>Bag Total: £{{ total|floatformat:2 }}</strong></h6>
-                                <h6>Delivery: £{{ delivery|floatformat:2 }}</h6>
-                                <h4 class="mt-4"><strong>Grand Total: £{{ grand_total|floatformat:2 }}</strong></h4>
-                                {% if free_delivery_delta > 0 %}
-                                    <p class="mb-1 text-danger">
-                                        Spend another <strong>${{ free_delivery_delta }}</strong> to qualify for free delivery!
-                                    </p>
-                                {% endif %}
-                            </td>
-                        </tr>
-                        <tr>
-                            <td colspan="5" class="text-right">
-                                <a href="{% url 'products' %}" class="btn btn-outline-black rounded-0 btn-lg">
-                                    <span class="icon">
-                                        <i class="fas fa-chevron-left"></i>
-                                    </span>
-                                    <span class="text-uppercase">Continue Shopping</span>
-                                </a>
-                                <a href="" class="btn btn-black rounded-0 btn-lg">
-                                    <span class="text-uppercase">Secure Checkout</span>
-                                    <span class="icon">
-                                        <i class="fas fa-lock"></i>
-                                    </span>
-                                </a>
-                            </td>
-                        </tr>
                     </table>
+                    <hr>
+                    <div class="pt-5 text-center">
+                        <h6><strong>Basket Total: £{{ total|floatformat:2 }}</strong></h6>
+                        <h6>Delivery Fee: £{{ delivery|floatformat:2 }}</h6>
+                        <h4 class="mt-4"><strong>Grand Total: £{{ grand_total|floatformat:2 }}</strong></h4>
+                        {% if free_delivery_delta > 0 %}
+                        <p class="mb-1 text-danger">
+                            Spend another <strong>${{ free_delivery_delta }}</strong> to qualify for free delivery!
+                        </p>
+                        {% endif %}
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <div class="col">
+                            <div class="text-center">
+                                <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                <a class="btn btn-outline-dark mt-auto" href="{{request.META.HTTP_REFERER}}"><i class="fas fa-chevron-left"></i> Go back</a>
+                                <a class="btn btn-outline-dark mt-auto" href="">Go to checkout <i class="fas fa-shopping-cart"></i></a>
+                            </div>
+                        </div>
+                    </div>    
+                </div>
+            </div>
                 </div>
             {% else %}
                 <p class="lead mb-5">Your basket is empty.</p>
-                <div class="text-center">
-                    <a class="btn btn-outline-dark mt-auto" href="{% url 'products' %}"><i class="fas fa-chevron-left"></i> Keep Shopping</a>
-                    <a class="btn btn-outline-dark mt-auto" href="">Go to Checkout</a>
+                <div class="row">
+                    <div class="col">
+                        <div class="text-center">
+                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                            <a class="btn btn-outline-dark mt-auto" href="{{request.META.HTTP_REFERER}}"><i class="fas fa-chevron-left"></i> Go back</a>
+                        </div>
+                    </div>
                 </div>
             {% endif %}
         </div>
