@@ -50,3 +50,6 @@ $('.decrement-qty').click(function(e) {
     form.submit();
 });
 
+// Show toast messages
+$('.toast').toast('show');
+

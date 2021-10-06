@@ -17,6 +17,32 @@
     font-size: 24px;
 }
 
+.message-container {
+    position: fixed;
+    top: 72px;
+    right: 15px;
+    z-index: 9999999999;
+}
+
+.custom-toast {
+    overflow: visible;
+}
+
+.toast-capper {
+    height: 2px;
+}
+
+.close {
+    position: absolute;
+    right: 10px;
+}
+
+.basket-notification-wrapper {
+    max-height: 150px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
 @media (min-width: 992px) {
 .searchbar-center {
     flex: 0 0 auto;
