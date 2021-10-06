@@ -46,25 +46,24 @@
                                     <p class="my-0">£{{ product.product.selling_price }}</p>
                                 </td>
                                 <td class="py-3">
-                                    <form class="form update-form" method="POST" action="{% url 'modify_basket' product.product_sku %}">
+                                    <form class="form update-form" id="form" method="POST" action="{% url 'modify_basket' product.product_sku %}">
                                         {% csrf_token %}
                                         <div class="form-group">
-                                            <div class="input-group">
+                                            <div class="input-group input-group-{{ product.product_sku }}">
                                                 <div class="input-group-prepend">
-                                                    <button class="decrement-qty btn btn-sm btn-black rounded-0" 
-                                                        data-item_id="{{ product.product_sku }}" id="decrement-qty_{{ product.product_sku }}">
+                                                    <button class="decrement-qty btn btn-sm btn-black rounded-0 decrement-qty_{{ product.product_sku }}" 
+                                                        data-product_sku="{{ product.product_sku }}">
                                                         <span>
                                                             <i class="fas fa-minus fa-sm"></i>
                                                         </span>
                                                     </button>
                                                 </div>
-                                                <input class="form-control form-control-sm qty_input" type="number"
+                                                <input class="form-control form-control-sm qty_input sku_qty_{{ product.product_sku }} " type="number"
                                                     name="quantity" value="{{ product.quantity }}" min="1" max="99"
-                                                    data-item_id="{{ product.product_sku }}"
-                                                    id="id_qty_{{ product.product_sku }}" style="max-width: 50px;">
+                                                    data-product_sku="{{ product.product_sku }}" style="max-width: 80px;">
                                                 <div class="input-group-append">
-                                                    <button class="increment-qty btn btn-sm btn-black rounded-0"
-                                                        data-item_id="{{ product.product_sku }}" id="increment-qty_{{ product.product_sku }}">
+                                                    <button class="increment-qty btn btn-sm btn-black rounded-0 increment-qty_{{ product.product_sku }}"
+                                                        data-product_sku="{{ product.product_sku }}">
                                                         <span>
                                                             <i class="fas fa-plus fa-sm"></i>
                                                         </span>
@@ -75,10 +74,10 @@
                                     </form>
                                 </td>
                                 <td class="py-3">
-                                    <a class="btn btn-warning btn-outline-dark" href="">Update <i class="fas fa-sync-alt"></i></a>
+                                    <a class="btn btn-warning btn-outline-dark update-link">Update <i class="fas fa-sync-alt"></i></a>
                                 </td>
                                 <td class="py-3">
-                                    <a class="btn btn-danger btn-outline-dark" href="">Remove <i class="fas fa-trash-alt"></i></a>
+                                    <a class="btn btn-danger btn-outline-dark remove-product" id="remove_{{ product.product_sku }}">Remove <i class="fas fa-trash-alt"></i></a>
                                 </td>
                                 <td class="py-3">
                                     <p class="my-0">£{{ product.product.selling_price | calc_subtotal:product.quantity }}</p>
@@ -124,4 +123,5 @@
         </div>
     </div>
 </div>
+
 {% endblock %}

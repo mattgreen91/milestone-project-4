@@ -1,42 +1,69 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta http-equiv="X-UA-Compatible" contents="ie=edge">
-        <title>Shop Homepage - Start Bootstrap Template</title>
-        <!-- Favicon-->
-        <link rel="icon" type="image/x-icon" href="{% static 'libraries/assets/favicon.ico' %}" />
-        <!-- Bootstrap icons-->
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
-        <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="{% static 'libraries/css/styles.css' %}" rel="stylesheet" />
-        <!-- Fontawesome Icons -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" rel="stylesheet" />
-        <!-- Custom CSS -->
-        <link rel="stylesheet" href="{% static 'css/base.css' %}">
-    </head>
-    <body>
-        <div style="min-height: 85vh">
-            <!-- Navigation-->
-            {% include 'includes/nav.html' %}
-            <!-- Header-->
-            {% include 'includes/header.html' %}
-            <!-- Search -->
-            {% include 'includes/search.html' %}
-            {% block content %}
-            {% endblock %}
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta http-equiv="X-UA-Compatible" contents="ie=edge">
+    <title>Shop Homepage - Start Bootstrap Template</title>
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="{% static 'libraries/assets/favicon.ico' %}" />
+    <!-- Bootstrap icons-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="{% static 'libraries/css/styles.css' %}" rel="stylesheet" />
+    <!-- Fontawesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
+        rel="stylesheet" />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+</head>
+
+<body>
+    <div style="min-height: 85vh">
+        <!-- Navigation-->
+        {% include 'includes/nav.html' %}
+        <!-- Header-->
+        {% include 'includes/header.html' %}
+        <!-- Search -->
+        {% include 'includes/search.html' %}
+        {% block content %}
+        {% endblock %}
+    </div>
+    <!-- Footer-->
+    <footer class="py-5 bg-primary">
+        <div class="container">
+            <p class="m-0 text-center text-white">Copyright &copy; Game Store 2021</p>
         </div>
-        <!-- Footer-->
-        <footer class="py-5 bg-primary">
-            <div class="container"><p class="m-0 text-center text-white">Copyright &copy; Game Store 2021</p></div>
-        </footer>
-        <!-- Bootstrap core JS-->
-        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
-        <!-- Core theme JS-->
-        <script src="{% static 'libraries/js/scripts.js' %}"></script>
-    </body>
+    </footer>
+    <!-- Bootstrap core JS-->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Core theme JS -->
+    <script src="{% static 'libraries/js/scripts.js' %}"></script>
+    <!-- Custom scripts -->
+    <script src="{% static 'js/script.js' %}"></script>
+    <script>
+        // Remove item and reload on click - in this file as csrf token needed with jinja
+    $('.remove-product').click(function(e) {
+        var csrfToken = "{{ csrf_token }}";
+        var productSku = $(this).attr('id').split('remove_')[1];
+        console.log("remove")
+        var url = `/basket/remove/${productSku}/`;
+        console.log(url);
+        var data = {'csrfmiddlewaretoken': csrfToken};
+    
+        $.post(url, data)
+         .done(function() {
+             location.reload();
+         });
+    }); 
+    </script>
+</body>
+
 </html>
