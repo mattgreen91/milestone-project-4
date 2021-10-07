@@ -65,8 +65,6 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'gamestore.urls'
 
-CRISPY_TEMPLATE_PACK = 'boostrap 4'
-
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -81,6 +79,7 @@ TEMPLATES = [
                 'django.template.context_processors.request', # required by allauth
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'django.template.context_processors.media',
                 'basket.context.basket_contents',
             ],
             'builtins': [

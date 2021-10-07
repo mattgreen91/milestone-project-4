@@ -43,6 +43,10 @@
     overflow-y: auto;
 }
 
+.stripe-style-input {
+    width: 100%;
+}
+
 @media (min-width: 992px) {
 .searchbar-center {
     flex: 0 0 auto;

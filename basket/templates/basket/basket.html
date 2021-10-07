@@ -152,7 +152,7 @@
                         <h4 class="mt-4"><strong>Grand Total: £{{ grand_total|floatformat:2 }}</strong></h4>
                         {% if free_delivery_delta > 0 %}
                         <p class="mb-1 text-danger">
-                            Spend another <strong>${{ free_delivery_delta }}</strong> to qualify for free delivery!
+                            Spend another <strong>£{{ free_delivery_delta }}</strong> to qualify for free delivery!
                         </p>
                         {% endif %}
                     </div>
@@ -162,7 +162,7 @@
                             <div class="text-center">
                                 <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
                                 <a class="btn btn-outline-dark mt-auto" href="{{request.META.HTTP_REFERER}}"><i class="fas fa-chevron-left"></i> Go back</a>
-                                <a class="btn btn-outline-dark mt-auto" href="">Go to checkout <i class="fas fa-shopping-cart"></i></a>
+                                <a class="btn btn-outline-dark mt-auto" href="{% url 'checkout' %}">Go to checkout <i class="fas fa-shopping-cart"></i></a>
                             </div>
                         </div>
                     </div>    
