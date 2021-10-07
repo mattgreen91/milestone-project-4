@@ -45,6 +45,12 @@ INSTALLED_APPS = [
     'home',
     'products',
     'basket',
+    'checkout',
+    'profiles',
+
+    # Other
+    'crispy_forms',
+
 ]
 
 MIDDLEWARE = [
@@ -58,6 +64,8 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'gamestore.urls'
+
+CRISPY_TEMPLATE_PACK = 'boostrap 4'
 
 TEMPLATES = [
     {
@@ -74,6 +82,10 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
                 'basket.context.basket_contents',
+            ],
+            'builtins': [
+                'crispy_forms.templatetags.crispy_forms_tags',
+                'crispy_forms.templatetags.crispy_forms_field',
             ],
             'libraries':{
             'basket_tools': 'basket.templatetags.basket_tools',

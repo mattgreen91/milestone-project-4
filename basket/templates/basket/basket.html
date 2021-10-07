@@ -17,7 +17,7 @@
         <div class="col">
             {% if basket_products %}
                 <div class="table-responsive rounded" style="overflow-x: hidden;">
-                    <table class="table table-sm table-borderless">
+                    <table class="table table-sm table-borderless d-none d-md-block">
                         <thead class="text-black">
                             <tr>
                                 <th scope="col">Product Info</th>
@@ -81,6 +81,68 @@
                                 </td>
                                 <td class="py-3">
                                     <p class="my-0">£{{ product.product.selling_price | calc_subtotal:product.quantity }}</p>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    </table>
+                    <table class="table table-sm table-borderless d-block d-md-none">
+                        {% for product in basket_products %}
+                            <tr>
+                                <td class="p-3 w-25">
+                                    <img class="img-fluid rounded" src="{{ product.product.image.url }}">
+                                </td>
+                                <td class="py-3">
+                                    <p class="my-0"><strong>{{ product.product.name }}</strong></p>
+                                    <p class="my-0 small text-muted">Console: {{ product.product.category.friendly_name }}</p>
+                                    <p class="my-0 small text-muted">Age: {{ product.product.age }}</p>
+                                    &nbsp;
+                                    <p class="my-0 small text-muted">SKU: {{ product.product.sku|upper }}</p>
+                                    <p class="my-0">Price: £{{ product.product.selling_price }}</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="py-3">
+                                    <form class="form update-form" id="form" method="POST" action="{% url 'modify_basket' product.product_sku %}">
+                                        {% csrf_token %}
+                                        <div class="form-group">
+                                            <div class="input-group input-group-{{ product.product_sku }}">
+                                                <div class="input-group-prepend">
+                                                    <button class="decrement-qty btn btn-sm btn-black rounded-0 decrement-qty_{{ product.product_sku }}" 
+                                                        data-product_sku="{{ product.product_sku }}" style="position: absolute; left: 0px">
+                                                        <span>
+                                                            <i class="fas fa-minus fa-sm"></i>
+                                                        </span>
+                                                    </button>
+                                                </div>
+                                                <input class="form-control form-control-sm qty_input sku_qty_{{ product.product_sku }} " type="number"
+                                                    name="quantity" value="{{ product.quantity }}" min="1" max="99"
+                                                    data-product_sku="{{ product.product_sku }}" style="width: 80px; position: absolute; left: 50px">
+                                                <div class="input-group-append">
+                                                    <button class="increment-qty btn btn-sm btn-black rounded-0 increment-qty_{{ product.product_sku }}"
+                                                        data-product_sku="{{ product.product_sku }}" style="position: absolute; left: 140px">
+                                                        <span>
+                                                            <i class="fas fa-plus fa-sm"></i>
+                                                        </span>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </td>
+                                <td class="py-3" style="position: absolute; right: 80px;">
+                                    <a class="btn btn-warning btn-outline-dark update-link"><i class="fas fa-sync-alt"></i></a>
+                                </td>
+                                <td class="py-3">
+                                    <a class="btn btn-danger btn-outline-dark remove-product" id="remove_{{ product.product_sku }}"><i class="fas fa-trash-alt"></i></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="py-3">
+                                    <p class="my-0"><strong>Subtotal: </strong></p>
+                                </td>
+                                <td class="py-3">
+                                    <p class="my-0"><stong>£{{ product.product.selling_price | calc_subtotal:product.quantity }}</strong></p>
+                                    <hr>
                                 </td>
                             </tr>
                         {% endfor %}
