@@ -24,7 +24,10 @@ var style = {
         iconColor: 'red'
     }
 };
-var card = elements.create('card', {style: style});
+var card = elements.create('card', {
+    style: style,
+    hidePostalCode: true,
+});
 card.mount('#card-element');
 
 // Handle realtime validation errors on the card element
