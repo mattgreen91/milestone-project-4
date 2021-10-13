@@ -1,3 +1,4 @@
+import os
 from django.shortcuts import (
     render, redirect, reverse, get_object_or_404, HttpResponse
 )
@@ -23,7 +24,7 @@ def cache_checkout_data(request):
         pid = request.POST.get('client_secret').split('_secret')[0]
         stripe.api_key = settings.STRIPE_SECRET_KEY
         stripe.PaymentIntent.modify(pid, metadata={
-            'bag': json.dumps(request.session.get('basket', {})),
+            'basket': json.dumps(request.session.get('basket', {})),
             'save_info': request.POST.get('save_info'),
             'username': request.user,
         })
@@ -32,6 +33,13 @@ def cache_checkout_data(request):
         messages.error(request, ('Sorry, your payment cannot be '
                                  'processed right now. Please try '
                                  'again later.'))
+        print(e)
+        print("from view.py, secret key (line 39) = ")
+        print(os.environ.get('STRIPE_SECRET_KEY'))
+        print("from view.py, public key (line 41) = ")
+        print(os.environ.get('STRIPE_PUBLIC_KEY'))
+        print("from views.py, client secret (line 24) = ")
+        print('client_secret').split('_secret')[0]
         return HttpResponse(content=e, status=400)
 
 
@@ -40,7 +48,8 @@ def checkout(request):
     stripe_secret_key = settings.STRIPE_SECRET_KEY
 
     if request.method == 'POST':
-        bag = request.session.get('basket', {})
+        basket = request.session.get('basket', {})
+        print('POST')
 
         form_data = {
             'full_name': request.POST['full_name'],
@@ -59,7 +68,7 @@ def checkout(request):
             order = order_form.save(commit=False)
             pid = request.POST.get('client_secret').split('_secret')[0]
             order.stripe_pid = pid
-            order.original_bag = json.dumps(bag)
+            order.original_basket = json.dumps(basket)
             order.save()
             for product_sku, product_data in basket.items():
                 try:

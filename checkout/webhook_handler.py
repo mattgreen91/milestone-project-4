@@ -121,7 +121,7 @@ class StripeWH_Handler:
                     original_basket=basket,
                     stripe_pid=pid,
                 )
-                for product_sku, product_data in json.loads(basket).items():
+                for product_sku, product_data in json.loads(basket).products():
                     product = Product.objects.get(sku=product_sku)
                     order_line_item = OrderLineItem(
                         order=order,
