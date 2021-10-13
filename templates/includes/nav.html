@@ -5,10 +5,9 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
                 <li class="nav-item"><a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a></li>
-                <li class="nav-item"><a class="nav-link" href="#!">About</a></li>
                 {% if request.user.is_authenticated %}
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Shop</a>
+                    <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Shop</a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <li><a class="dropdown-item" href="{% url 'products' %}?sort=name&direction=asc">All Games</a></li>
                         <li><hr class="dropdown-divider" /></li>
@@ -18,12 +17,18 @@
                         <li><a class="dropdown-item" href="{% url 'products' %}?category=PS5&sort=name&direction=asc">Playstation 5</a></li>
                         <li><a class="dropdown-item" href="{% url 'products' %}?category=Xbox%201&sort=name&direction=asc">Xbox One Series</a></li>
                         <li><a class="dropdown-item" href="{% url 'products' %}?category=Xbox%20X&sort=name&direction=asc">Xbox X Series</a></li>
-                        {% if request.user.is_superuser %}
-                        <li><hr class="dropdown-divider" /></li>
-                        <li><a class="dropdown-item" href="#!">Manage Games</a></li>
-                        {% endif %}
                     </ul>
                 </li>
+                {% if request.user.is_superuser %}
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Manage Games</a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="{% url 'add_product' %}">Add Product</a></li>
+                        <li><a class="dropdown-item" href="{% url 'edit_product' %}">Edit Product</a></li>
+                        <li><a class="dropdown-item" href="{% url 'delete_product' %}">Delete Product</a></li>
+                    </ul>
+                </li>
+                {% endif %}
                 <li class="nav-item"><a class="nav-link" href="{% url 'profile' %}">Profile</a></li>
                 <li class="nav-item"><a class="nav-link" href="{% url 'account_logout' %}">Logout</a></li>
                 {% else %}
