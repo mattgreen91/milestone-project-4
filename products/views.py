@@ -76,4 +76,71 @@ def product_detail(request, product_sku):
 
     else:
         return redirect('home')
+
+@login_required
+def add_product(request):
+    """ Add a product to the store """
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, only administrators can do this.')
+        return redirect(reverse('home'))
+
+    if request.method == 'POST':
+        form = ProductForm(request.POST, request.FILES)
+        if form.is_valid():
+            product = form.save()
+            messages.success(request, 'Successfully added product to store!')
+            return redirect(reverse('product_detail', args=[product.sku]))
+        else:
+            messages.error(request, 'Failed to add product. Please check the form is valid.')
+    else:
+        form = ProductForm()
+        
+    template = 'products/add_product.html'
+    context = {
+        'form': form,
+    }
+
+    return render(request, template, context)
+
+
+@login_required
+def edit_product(request, product_sku):
+    """ Edit a product in the store """
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, only administrators can do this.')
+        return redirect(reverse('home'))
+
+    product = get_object_or_404(Product, sku=product_sku)
+    if request.method == 'POST':
+        form = ProductForm(request.POST, request.FILES, instance=product)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Successfully updated product in store!')
+            return redirect(reverse('product_detail', args=[product.sku]))
+        else:
+            messages.error(request, 'Failed to update product. Please check the form is valid.')
+    else:
+        form = ProductForm(instance=product)
+        messages.info(request, f'You are editing {product.name}')
+
+    template = 'products/edit_product.html'
+    context = {
+        'form': form,
+        'product': product,
+    }
+
+    return render(request, template, context)
+
+
+@login_required
+def delete_product(request, product_sku):
+    """ Delete a product from the store """
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, only administrators can do this.')
+        return redirect(reverse('home'))
+
+    product = get_object_or_404(Product, sku=product_sku)
+    product.delete()
+    messages.success(request, 'Product deleted from store!')
+    return redirect(reverse('products'))
         
