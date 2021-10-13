@@ -1,0 +1,18 @@
+Dear {{ order.full_name }}!
+
+This email is a confirmation of your order with us at GameStore.
+
+Order details below:
+
+Order Number: {{ order.order_number }}
+Order Date: {{ order.date }}
+
+Order Total: £{{ order.grand_total }} (£{{ order.order_total }} + delivery £{{ order.delivery_cost }})
+
+Your order will be despatched within 72 hours to {{ order.street_address1 }} in {{ order.town_or_city }}, {{ order.country }}.
+
+We have your contact number: {{ order.phone_number }}.
+
+For more information please contact us on {{ contact_email }}.
+
+Thanks for choosing GameStore!
