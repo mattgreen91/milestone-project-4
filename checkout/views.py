@@ -34,12 +34,6 @@ def cache_checkout_data(request):
                                  'processed right now. Please try '
                                  'again later.'))
         print(e)
-        print("from view.py, secret key (line 39) = ")
-        print(os.environ.get('STRIPE_SECRET_KEY'))
-        print("from view.py, public key (line 41) = ")
-        print(os.environ.get('STRIPE_PUBLIC_KEY'))
-        print("from views.py, client secret (line 24) = ")
-        print('client_secret').split('_secret')[0]
         return HttpResponse(content=e, status=400)
 
 

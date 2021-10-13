@@ -75,6 +75,13 @@
     color: black;
 }
 
+/* all auth formatting */
+
+.allauth-form-inner-content {
+    display: block;
+    margin: auto 0;
+}
+
 @media (min-width: 992px) {
 .searchbar-center {
     flex: 0 0 auto;
