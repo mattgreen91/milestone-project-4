@@ -100,7 +100,7 @@
                         <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
                             <a class="btn btn-outline-dark mt-auto" href="{{request.META.HTTP_REFERER}}"><i class="fas fa-chevron-left"></i> Go back</a>
                             <a class="btn btn-outline-success mt-auto text-black" href="{% url 'edit_product' product.sku %}">Edit product <i class="fas fa-pencil"></i></a>
-                            <a class="btn btn-outline-danger mt-auto text-black" href="">Delete product <i class="fas fa-trash-alt"></i></a>
+                            <a class="btn btn-outline-danger mt-auto text-black" href="{% url 'delete_product' product.sku %}">Delete product <i class="fas fa-trash-alt"></i></a>
                         </div>
                     </div>    
                 </div>
