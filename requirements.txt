@@ -1,6 +1,7 @@
 aiohttp==3.7.4.post0
 asgiref==3.4.1
 async-timeout==3.0.1
+auditlog3==1.0.1
 boto3==1.18.62
 botocore==1.21.62
 dj-database-url==0.5.0
