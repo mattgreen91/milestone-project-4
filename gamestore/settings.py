@@ -90,9 +90,6 @@ TEMPLATES = [
                 'crispy_forms.templatetags.crispy_forms_tags',
                 'crispy_forms.templatetags.crispy_forms_field',
             ],
-            'libraries':{
-            'basket_tools': 'basket.templatetags.basket_tools',
-            }
         },
     },
 ]
