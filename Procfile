@@ -1,2 +1,2 @@
 web: gunicorn gamestore.wsgi:application
-web: python manage.py
+web: python3 manage.py
