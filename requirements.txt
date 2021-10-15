@@ -12,7 +12,6 @@ django-countries==7.2.1
 django-countries-with-calling-codes==0.1.1
 django-crispy-forms==1.13.0
 django-storages==1.12.1
-django-utils-six==2.0
 geoip2==4.4.0
 gunicorn==20.1.0
 jmespath==0.10.0
