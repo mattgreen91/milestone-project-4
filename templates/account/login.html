@@ -41,7 +41,7 @@ for a {{ site_name }} account and sign in below:{% endblocktrans %}</p>
   <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
   {% endif %}
   <a class="button secondaryAction" href="{% url 'account_reset_password' %}">{% trans "Forgot Password?" %}</a>
-  <button class="primaryAction" type="submit">{% trans "Sign In" %}</button>
+  <button class="primaryAction btn btn-outline-dark mt-auto" type="submit">{% trans "Sign In" %}</button>
 </form>
 
 <div class="container">
@@ -55,5 +55,24 @@ for a {{ site_name }} account and sign in below:{% endblocktrans %}</p>
     </div>
   </div>
 </div>
+
+<div class="row">
+  <div class="col">
+      <div class="text-center">
+          <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+          <a class="btn btn-outline-dark mt-auto" href="{{request.META.HTTP_REFERER}}"><i class="fab fa-google"></i>&nbsp; Log in with Google</a>
+          <a class="btn btn-outline-dark mt-auto" href="{{request.META.HTTP_REFERER}}"><i class="fab fa-facebook-f"></i>&nbsp; Log in with Facebook</a>
+      </div>
+  </div>
+</div>   
+
+<div class="row">
+  <div class="col">
+      <div class="text-center">
+          <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+          <a class="btn btn-outline-dark mt-auto" href="{{request.META.HTTP_REFERER}}"><i class="fas fa-chevron-left"></i> Go back</a>
+      </div>
+  </div>
+</div>    
 
 {% endblock %}
