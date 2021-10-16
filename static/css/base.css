@@ -78,17 +78,19 @@
 /* all auth formatting */
 
 .allauth-form-inner-content {
-    display: block;
     margin: auto 0;
-    width: 90%;
+    width: 50%;
     height: auto;
     margin: 0 auto;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    padding-left: 5px;
+    padding-right: 5px;
 }
 
-@media (min-width: 768px) {
+@media screen and (max-width: 767px) {
     .allauth-form-inner-content {
-        width: 40%;
-        height: auto;
+        width: 100%;
     }
 }
 
