@@ -7,7 +7,9 @@
             <div class="container px-4 px-lg-5 my-5">
                 <div class="text-center text-white">
                     {% if request.user.is_authenticated %}
-                    <h1 class="display-4 fw-bolder">See the latest games in store now</h1>
+                    <h1 class="display-4 fw-bolder">Welcome {{ user }}</h1>
+                    &nbsp;
+                    <h3 class="display-3 fw">Shop the latest games in store now</h3>
                     <button type="button" class="btn btn-dark shop-now" onclick="location.href='{% url 'products' %}'">Shop Now</button>
                     {% else %}
                     <h1 class="display-4 fw-bold">Welcome to<br/>Game Store</h1>
@@ -17,6 +19,9 @@
         </div>
         {% if request.user.is_authenticated %}
         {% else %}
-        <h1 class="display-6 fw-light" style="margin-top: 50px; margin-bottom: 50px; margin-left: 10px; margin-right: 10px; text-align: center;">Please login or register to access the store</h1>
+        <h1 class="display-6 fw-light" style="margin-top: 50px; margin-bottom: 50px; margin-left: 10px; margin-right: 10px; text-align: center;">Please 
+            <a href="{% url 'account_login' %}">login</a> or 
+            <a href="{% url 'account_signup' %}">register</a> 
+            to access the store</h1>
         {% endif %}
 {% endblock %}

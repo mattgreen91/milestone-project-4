@@ -2,6 +2,7 @@
 
 {% load i18n %}
 {% load account socialaccount %}
+{% load static %}
 
 {% block head_title %}{% trans "Sign In" %}{% endblock %}
 
@@ -42,5 +43,17 @@ for a {{ site_name }} account and sign in below:{% endblocktrans %}</p>
   <a class="button secondaryAction" href="{% url 'account_reset_password' %}">{% trans "Forgot Password?" %}</a>
   <button class="primaryAction" type="submit">{% trans "Sign In" %}</button>
 </form>
+
+<div class="container">
+  <div class="row">
+    <div class="col text-center">OR</div>
+  </div>
+  &nbsp;
+  <div class="row">
+    <div class="col">
+      <img src="{% static 'img/sign_in_google.png' %}" class="google" />
+    </div>
+  </div>
+</div>
 
 {% endblock %}

@@ -77,6 +77,17 @@
 
 /* all auth formatting */
 
+.google {
+    display: block;
+    width: 200px;
+    height: auto;
+    margin: 0 auto;
+}
+
+.google:hover {
+    filter: brightness(50%);
+}
+
 .allauth-form-inner-content {
     margin: auto 0;
     width: 50%;
