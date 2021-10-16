@@ -80,6 +80,16 @@
 .allauth-form-inner-content {
     display: block;
     margin: auto 0;
+    width: 90%;
+    height: auto;
+    margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+    .allauth-form-inner-content {
+        width: 40%;
+        height: auto;
+    }
 }
 
 @media (min-width: 992px) {
