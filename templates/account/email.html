@@ -5,9 +5,9 @@
 {% block head_title %}{% trans "E-mail Addresses" %}{% endblock %}
 
 {% block inner_content %}
-    <h1>{% trans "E-mail Addresses" %}</h1>
+    <h1 class="text-center">{% trans "E-mail Addresses" %}</h1>
 {% if user.emailaddress_set.all %}
-<p>{% trans 'The following e-mail addresses are associated with your account:' %}</p>
+<p class="text-center">{% trans 'The following e-mail addresses are associated with your account:' %}</p>
 
 <form action="{% url 'account_email' %}" class="email_list" method="post">
 {% csrf_token %}
@@ -29,39 +29,44 @@
 </label>
 </div>
   {% endfor %}
-
-<div class="buttonHolder">
-      <button class="secondaryAction btn btn-outline-dark mt-auto" type="submit" name="action_primary" >{% trans 'Make Primary' %}</button>
-      <button class="secondaryAction btn btn-outline-dark mt-auto" type="submit" name="action_send" >{% trans 'Re-send Verification' %}</button>
-      <button class="primaryAction btn btn-outline-dark mt-auto" type="submit" name="action_remove" >{% trans 'Remove' %}</button>
-</div>
-
+  &nbsp;
+  <div class="row">
+    <div class="col">
+      <div class="text-center">
+        <div class="buttonHolder">
+          <button class="secondaryAction btn btn-outline-dark mt-auto" type="submit" name="action_primary" >{% trans 'Make Primary' %}</button>
+          <button class="secondaryAction btn btn-outline-dark mt-auto" type="submit" name="action_send" >{% trans 'Re-send Verification' %}</button>
+          <button class="primaryAction btn btn-outline-dark mt-auto" type="submit" name="action_remove" >{% trans 'Remove' %}</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  &nbsp;
 </fieldset>
 </form>
 
 {% else %}
-<p><strong>{% trans 'Warning:'%}</strong> {% trans "You currently do not have any e-mail address set up. You should really add an e-mail address so you can receive notifications, reset your password, etc." %}</p>
+<p class="text-center"><strong>{% trans 'Warning:'%}</strong> {% trans "You currently do not have any e-mail address set up. You should really add an e-mail address so you can receive notifications, reset your password, etc." %}</p>
 
 {% endif %}
+  &nbsp;
 
   {% if can_add_email %}
-    <h2>{% trans "Add E-mail Address" %}</h2>
+    <h2 class="text-center">{% trans "Add E-mail Address" %}</h2>
 
     <form method="post" action="{% url 'account_email' %}" class="add_email">
         {% csrf_token %}
-        {{ form.as_p }}
-        <button class="btn btn-outline-dark mt-auto" name="action_add" type="submit">{% trans "Add E-mail" %}</button>
-    </form>
-  {% endif %}
-  <div class="row">
-    <div class="col">
-        <div class="text-center">
-            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+        {{ form|crispy }}
+        &nbsp;
+        <div class="row">
+          <div class="col text-center">
             <a class="btn btn-outline-dark mt-auto" href="{{request.META.HTTP_REFERER}}"><i class="fas fa-chevron-left"></i> Go back</a>
+            <button class="btn btn-outline-dark mt-auto" name="action_add" type="submit">{% trans "Add E-mail" %}</button>
+          </div>
         </div>
-    </div>
-  </div>   
-
+    </form>
+    &nbsp;
+  {% endif %} 
 {% endblock %}
 
 

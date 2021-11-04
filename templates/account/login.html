@@ -4,7 +4,7 @@
 {% load account socialaccount %}
 {% load static %}
 
-{% block head_title %}{% trans "Sign In" %}{% endblock %}
+{% block head_title %}{% trans "Log In" %}{% endblock %}
 
 {% block inner_content %}
 
@@ -13,9 +13,8 @@
 {% get_providers as socialaccount_providers %}
 
 <p class="text-center">{% blocktrans %}If you have not created a user account yet, then please
-  <a href="{{ signup_url }}">sign up</a> first.{% endblocktrans %}
+  <a href="{{ signup_url }}">register</a> first.{% endblocktrans %}
 </p>
-&nbsp;
 <form class="login" method="POST" action="{% url 'account_login' %}">
   {% csrf_token %}
   {{ form|crispy }}

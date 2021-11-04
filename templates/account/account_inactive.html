@@ -5,7 +5,20 @@
 {% block head_title %}{% trans "Account Inactive" %}{% endblock %}
 
 {% block inner_content %}
-<h1>{% trans "Account Inactive" %}</h1>
+<h1 class="text-center">{% trans "Account Inactive" %}</h1>
 
-<p>{% trans "This account is inactive." %}</p>
+<p class="text-center">{% trans "This account is inactive." %}</p>
+
+&nbsp;
+  <div class="row">
+    <div class="col">
+      <div class="text-center">
+        <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+          <a class="btn btn-outline-dark mt-auto" href="{{request.META.HTTP_REFERER}}"><i
+              class="fas fa-chevron-left"></i> Go back</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
 {% endblock %}
