@@ -18,9 +18,15 @@ The website has been designed and tested to be fully functional on all devices, 
 <img src="readme-files/s4.png" width="300" style="margin: 0;">
 <img src="readme-files/s5.png" width="300" style="margin: 0;">
 <img src="readme-files/s6.png" width="300" style="margin: 0;">
-<img src="readme-files/s8.png" width="600" style="margin: 0;">
-<img src="readme-files/s7.png" width="330" style="margin: 0;">
+<img src="readme-files/s7.png" width="300" style="margin: 0;">
+<img src="readme-files/s8.png" width="200" style="margin: 0;">
 <img src="readme-files/s9.png" width="200" style="margin: 0;">
+<img src="readme-files/s10.png" width="300" style="margin: 0;">
+<img src="readme-files/s11.png" width="300" style="margin: 0;">
+<img src="readme-files/s12.png" width="300" style="margin: 0;">
+<img src="readme-files/s13.png" width="200" style="margin: 0;">
+<img src="readme-files/s14.png" width="200" style="margin: 0;">
+<img src="readme-files/s15.png" width="300" style="margin: 0;">
 
  
 ## Contents Page
@@ -84,7 +90,7 @@ The project has many features such as:
 * Fall-back fonts, in case Google Fonts are not compatible with the browser - built in with the library
 * Alternate Text' attributes for images, in case the images do not display
 
-<img src="readme-files/alt_labels.jpg" width="100" style="margin: 0;">
+<img src="readme-files/alt_labels.jpg" width="300" style="margin: 0;">
 
 * @media Queries, to modify content to fit different sized screens
 
@@ -187,7 +193,9 @@ I did both manual and automated testing for the website.
 
 **Bugs Found**
 
+- The website works perfectly but for some users if cookies are disabled may display message "CSRF Verification failed"
 
+- Google Auth works fine for first time users, however if logged in previously sometimes doesn't display google log-in page, current solution is to login using incognito mode
 
 ## 5. Deployment
 
@@ -225,6 +233,10 @@ Before deploying from GitPod we need to do the following steps:
 - Install the remote for Heroku using `npm install -g Heroku` then login with `heroku login -i` then add the remote using `git remove -v`
 - Push them into GitHub and Heroku using `git push -u heroku master` then `git push origin master`.
 
+In order to first access the admin page (your site name/admin), you have to create an administrator account using the following command:
+
+`python3 manage.py createsuperuser`
+
 The process for adding/modifying/removing content is as per below:
 
 `django-admin startproject gamestore` _to create the initial project_
@@ -243,6 +255,46 @@ The process for adding/modifying/removing content is as per below:
 
 To view the app live, type in the terminal `python3 run.py`.  If the app is open and you cannot close it, type `pkill -9 python3`
 
+**Amazon Web Services (AWS)**
+
+In order to set up AWS, you must first register an account then it can be linked to the site.  I found a nice guide how to set up AWS, you can open by [clicking here](https://simpleisbetterthancomplex.com/tutorial/2017/08/01/how-to-setup-amazon-s3-in-a-django-project.html)
+
+**PostgreSQL**
+
+In order to set up PostgreSQL on Heroku, I followed the steps from Heroku Dev Center, which you can view by [clicking here](https://devcenter.heroku.com/articles/heroku-postgresql)
+
+**Stripe**
+
+In order to set up Stripe Payments, I followed the steps from Stripe Documentation, which you can view by [clicking here](https://stripe.com/docs/checkout/quickstart)
+
+**All-Auth**
+
+In order to set up All-Auth, I followed the steps from All-Auth website, which you can view by [clicking here](https://django-allauth.readthedocs.io/en/latest/installation.html)
+
+**Google Authentication**
+
+In order to set up Google Authentication, I followed the steps from All-Auth Providers, which you can view by [clicking here](https://django-allauth.readthedocs.io/en/latest/providers.html#google)
+
+**Fixtures**
+
+Products are backed up and stored in JSON file.  
+
+To save them I used the commands: 
+
+`python3 manage.py dumpdata products.category > categories.json`
+
+`python3 manage.py dumpdata products.product > products.json`  
+
+Both are stored in products/fixtures folder.  
+
+To load new data the database, the JSON files should be added to fixture folder, and then the following commands should be run:
+
+`python3 manage.py loaddata categories`
+
+`python3 manage.py loaddata products`
+
+When switching from SQLite3 to PostgreSQL in the final deployment of my project, I did these steps to avoid losing my data.
+
 **Readme Template**
 
 Code Institute provided a [Readme Template](https://github.com/Code-Institute-Solutions/readme-template) which I used as a guideline for creating this Readme file.
@@ -258,7 +310,6 @@ If you would like to clone this repository locally:
 - In order to use this website, you will need to install python and django, and run the requirements by the command `pip3 install -r requirements.txt`.
 - You will need to update your Environment Variables in your gitpod settings to match yours, such as secret keys for AWS or Stripe.
 
-
 **Final Project**
 
 The project can be opened by [clicking here](https://game-store-uk.herokuapp.com)
@@ -269,7 +320,7 @@ The project can be opened by [clicking here](https://game-store-uk.herokuapp.com
 
 - The Template Library was taken from [StartBootstrap](https://startbootstrap.com/themes/business-corporate).
 - The product descriptions were taken from [Game](https://www.game.co.uk/) and [Amazon](https://www.amazon.co.uk/) 
-- The instructions to use AllAuth taken from [AllAuth](https://django-allauth.readthedocs.io/en/latest/installation.html)
+- The settings for AllAuth were taken from [AllAuth](https://django-allauth.readthedocs.io/en/latest/installation.html) for the site settings.py file
 - Modals for confirming if to delete or not created with the help of [GetBoostrap](https://getbootstrap.com/docs/4.0/components/modal/)
 
 
@@ -280,7 +331,7 @@ The project can be opened by [clicking here](https://game-store-uk.herokuapp.com
 
 ### Acknowledgements
 
-- Thanks to Code Institute for training me on Python, MongoDB and Flask
+- Thanks to Code Institute for training me on Python, Django, Allauth, AWS, PostgreSQL and Stripe.
 - Thanks to my mentor Allen Thomas Varghese for supporting me.
 - Thanks to Slack Community for helping me solve any issues with code not working.
 - Thanks to Code Institute Tutors for helping me fix any glitches with the IDE that I came across.
