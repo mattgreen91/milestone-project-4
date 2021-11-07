@@ -117,25 +117,18 @@ The main features of this project are:
 - Users are unable to browse any products without signing in or registering.
 - Users have the option to change their password whenever they want, or reset it.
 
-**Error 404 Page**
+**Error Pages**
 
-In case the user enters a page which does not exist, they will be redirected to an Error 404 page, that has the link to homepage.
+As per Django documentation, the main error messages are 400, 403, 404 and 500.
+These error pages have been saved in the templates directory which will override the Django default errors.
 
 <img src="readme-files/404.png" width="500" style="margin: 0;">
-
-**Error 500 Page**
-
-As it is a database, in case there is any other issues on the site, the user will be redirected to an Error 500 page, that has the link to homepage.
-
-<img src="readme-files/500.png" width="500" style="margin: 0;">
-
 
 ### Features Left to Implement
 
 - Some more settings in the 'account settings' page, such as modify username, delete account, profile picture, are still to be implemented
 - The ability to add number of products to settings, so when sold out it will display unavailable.
 - Stripe Payments to be taken off demo mode, and activated so actual payments can be made
-- Google login to be published so non-test accounts can login also
 - Other social accounts such as Discord and Facebook to be options for log in.
 - The option to delete the account.
 
