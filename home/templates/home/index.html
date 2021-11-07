@@ -7,11 +7,13 @@
             <div class="container px-4 px-lg-5 my-5">
                 <div class="text-center text-white">
                     {% if request.user.is_authenticated %}
+                    <!-- this only displays when user is logged in -->
                     <h1 class="display-4 fw-bolder">Welcome {{ user }}</h1>
                     &nbsp;
                     <h3 class="display-3 fw">Shop the latest games in store now</h3>
                     <button type="button" class="btn btn-dark shop-now" onclick="location.href='{% url 'products' %}'">Shop Now</button>
                     {% else %}
+                    <!-- if user isn't logged in, will display below instead -->
                     <h1 class="display-4 fw-bold">Welcome to<br/>Game Store</h1>
                     {% endif %}
                 </div>
@@ -19,6 +21,7 @@
         </div>
         {% if request.user.is_authenticated %}
         {% else %}
+        <!-- below shows signup and login links when user isn't logged in -->
         <h1 class="display-6 fw-light" style="margin-top: 50px; margin-bottom: 50px; margin-left: 10px; margin-right: 10px; text-align: center;">Please 
             <a href="{% url 'account_login' %}">login</a> or 
             <a href="{% url 'account_signup' %}">register</a> 

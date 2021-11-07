@@ -4,7 +4,7 @@
 {% block content %}
         <!-- Section-->
         <br />
-        
+        <!-- filter by type dropdown menu -->
         <div class="dropdown text-center">
             <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               Sort by
@@ -19,6 +19,7 @@
           </div>
 
         <section class="py-5">
+            <!-- each product item -->
             <div class="container px-4 px-lg-5 mt-5">
                 <div class="row gx-4 gx-lg-5 row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
                     {% for product in products %}

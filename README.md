@@ -270,6 +270,7 @@ The project can be opened by [clicking here](https://game-store-uk.herokuapp.com
 - The Template Library was taken from [StartBootstrap](https://startbootstrap.com/themes/business-corporate).
 - The product descriptions were taken from [Game](https://www.game.co.uk/) and [Amazon](https://www.amazon.co.uk/) 
 - The instructions to use AllAuth taken from [AllAuth](https://django-allauth.readthedocs.io/en/latest/installation.html)
+- Modals for confirming if to delete or not created with the help of [GetBoostrap](https://getbootstrap.com/docs/4.0/components/modal/)
 
 
 ### Media

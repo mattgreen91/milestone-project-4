@@ -13,6 +13,7 @@
     </div>
     <div class="row">
         <div class="col-12">
+            <!-- form to input product data -->
             <form method="POST" action="{% url 'add_product' %}" class="form mb-2" enctype="multipart/form-data">
                 {% csrf_token %}
                 {% for field in form %}
@@ -23,7 +24,9 @@
                     {% endif %}
                 {% endfor %}
                 <div class="text-right text-center">
+                    <!-- back button -->
                     <a class="btn btn-outline-dark mt-auto" href="{{request.META.HTTP_REFERER}}"><i class="fas fa-chevron-left"></i> Go back</a>
+                    <!-- add product button -->
                     <button class="btn btn-outline-dark mt-auto" type="submit">Add Product <i class="fas fa-plus"></i></button>
                 </div>
             </form>

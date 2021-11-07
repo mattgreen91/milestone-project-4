@@ -12,7 +12,7 @@
             <hr>
         </div>
     </div>
-
+    <!-- basket of items displayed below -->
     <div class="row">
         <div class="col">
             {% if basket_products %}
@@ -29,7 +29,7 @@
                                 <th scope="col">Subtotal</th>
                             </tr>
                         </thead>
-
+                        <!-- each item displayed below-->
                         {% for product in basket_products %}
                             <tr>
                                 <td class="p-3 w-25">
@@ -146,6 +146,7 @@
                         {% endfor %}
                     </table>
                     <hr>
+                    <!-- totals calculation -->
                     <div class="pt-5 text-center">
                         <h6><strong>Basket Total: £{{ total|floatformat:2 }}</strong></h6>
                         <h6>Delivery Fee: £{{ delivery|floatformat:2 }}</h6>
@@ -161,7 +162,9 @@
                         <div class="col">
                             <div class="text-center">
                                 <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                <!-- Go back button -->
                                 <a class="btn btn-outline-dark mt-auto" href="{{request.META.HTTP_REFERER}}"><i class="fas fa-chevron-left"></i> Go back</a>
+                                <!-- link to checkout page -->
                                 <a class="btn btn-outline-dark mt-auto" href="{% url 'checkout' %}">Go to checkout <i class="fas fa-shopping-cart"></i></a>
                             </div>
                         </div>
@@ -170,11 +173,13 @@
             </div>
                 </div>
             {% else %}
+                <!-- if no items in basket, will display basket is empty -->
                 <p class="lead mb-5">Your basket is empty.</p>
                 <div class="row">
                     <div class="col">
                         <div class="text-center">
                             <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                            <!-- Go back button -->
                             <a class="btn btn-outline-dark mt-auto" href="{{request.META.HTTP_REFERER}}"><i class="fas fa-chevron-left"></i> Go back</a>
                         </div>
                     </div>

@@ -1,7 +1,9 @@
+/* each product image */
 .card-image {
     width: auto;
 }
 
+/* searchbar customisation */
 .searchbar-center {
     margin-top: 20px!important;
     margin-bottom: 20px!important;
@@ -9,6 +11,7 @@
     padding-right: 20px!important;
 }
 
+/* shop now button on homescreen */
 .shop-now {
     width: 200px;
     height: 50px;
@@ -17,6 +20,7 @@
     font-size: 24px;
 }
 
+/* message popups */
 .message-container {
     position: fixed;
     top: 72px;
@@ -24,6 +28,7 @@
     z-index: 9999999999;
 }
 
+/* toast messages */
 .custom-toast {
     overflow: visible;
 }
@@ -32,17 +37,20 @@
     height: 2px;
 }
 
+/* close button for toast messages */
 .close {
     position: absolute;
     right: 10px;
 }
 
+/* basket notification */
 .basket-notification-wrapper {
     max-height: 150px;
     overflow-x: hidden;
     overflow-y: auto;
 }
 
+/* stripe payment input box */
 .stripe-style-input {
     width: 100%;
 }
@@ -75,7 +83,7 @@
     color: black;
 }
 
-/* all auth formatting */
+/* All-Auth formatting */
 
 .google {
     display: block;
@@ -99,15 +107,20 @@
     padding-right: 5px;
 }
 
+/* All-Auth forms to take up full size when smaller screens */
+
 @media screen and (max-width: 767px) {
     .allauth-form-inner-content {
         width: 100%;
     }
 }
 
+/* Searchbar to reduce in size on larger screens */
+
 @media (min-width: 992px) {
 .searchbar-center {
     flex: 0 0 auto;
     width: 33.33333333%;
     margin: auto;
+    }
 }

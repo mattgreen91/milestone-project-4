@@ -80,6 +80,7 @@
             </div>
         </div>
     </div>
+    <!-- Product details -->
     <div class="col-12 col-md-6 col-lg-4">
         <p class="mt-3" style="padding-left: 10px; padding-right: 10px;">{{ product.description }}</p>
         <form class="text-center form" action="{% url 'add_to_basket' product.sku %}" method="POST">
@@ -102,8 +103,10 @@
     <div class="col">
         <div class="text-center">
             <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                <!-- Go back button -->
                 <a class="btn btn-outline-dark mt-auto" href="{{request.META.HTTP_REFERER}}"><i
                         class="fas fa-chevron-left"></i> Go back</a>
+                <!-- Edit product button -->
                 <a class="btn btn-outline-success mt-auto text-black" href="{% url 'edit_product' product.sku %}">Edit
                     product <i class="fas fa-pencil"></i></a>
                 <a class="btn btn-outline-danger mt-auto text-black" data-toggle="modal" data-target="#delete">Delete
@@ -115,6 +118,7 @@
 <!-- Are you sure pop-up -->
 <div class="modal fade" id="delete" tabindex="-1" role="dialog" aria-labelledby="delete" aria-hidden="true">
     <div class="modal-dialog" role="document">
+        <!-- Pop up - are you sure you want to delete ? -->
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="exampleModalLabel">Are you sure you want to delete {{ product.name }}?</h5>

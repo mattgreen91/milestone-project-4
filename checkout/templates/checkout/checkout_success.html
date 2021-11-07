@@ -12,13 +12,14 @@
             <hr>
         </div>
     </div>
-
+    <!-- confirmation order has been placed -->
     <div class="row">
         <div class="col-12 text-center">
             <p class="text-muted">A confirmation email has been sent to {{ order.email }} </p>
         </div>
     </div>
     <hr>
+    <!-- Displays order details on large screens -->
     <div class="row d-md-block d-none">
         <div class="col-12">
             <div class="order-confirmation-wrapper p-2 border">
@@ -51,7 +52,7 @@
                         <h6>Product details:</h6>
                     </div>
                 </div>
-
+                <!-- each item in the order -->
                 {% for product in order.lineitems.all %}
                 <div class="row">
                     <div class="col-12 col-md-4">
@@ -65,6 +66,7 @@
                 </div>
                 {% endfor %}
                 <hr>
+                <!-- order contact details -->
                 <div class="row">
                     <div class="col-12">
                         <h6>Postal address:</h6>
@@ -183,6 +185,7 @@
             </div>
         </div>
     </div>
+    <!-- displays order for small screens and mobile devices -->
     <div class="row d-md-none d-block text-center">
         <div class="col-12">
             <div class="order-confirmation-wrapper p-2 border">
@@ -206,7 +209,7 @@
                         <h6>Product details:</h6>
                     </div>
                 </div>
-
+                <!-- displays each order item -->
                 {% for product in order.lineitems.all %}
                 <div class="row">
                     <div class="col-12 col-md-4">
@@ -220,6 +223,7 @@
                 </div>
                 {% endfor %}
                 <hr>
+                <!-- order contact details -->
                 <div class="row">
                     <div class="col-12">
                         <h6>Postal address:</h6>
@@ -320,7 +324,9 @@
         <div class="col">
             <div class="text-center">
                 <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                    <!-- Go back button -->
                     <a class="btn btn-outline-dark mt-auto" href="{{request.META.HTTP_REFERER}}"><i class="fas fa-chevron-left"></i> Go back</a>
+                    <!-- link to go to shopping page -->
                     <a class="btn btn-outline-dark mt-auto" href="{% url 'products' %}"><i
                                         class="fas fa-shopping-cart"></i> Continue Shopping </a>
                 </div>
