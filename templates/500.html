@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+        <!-- Section-->
+        <div class="bg-primary py-5">
+            <div class="container px-4 px-lg-5 my-5">
+                <div class="text-center text-white">
+                    <!-- error to display when 404 -->
+                    <h1 class="display-1 fw-bolder">Error 500</h1>
+                    &nbsp;
+                    <h3 class="display-5 fw">Server Error</h3>
+                    &nbsp;
+                    <h3 class="display-5 fw">Click below to return to the homepage</h3>
+                    <button type="button" class="btn btn-dark shop-now" onclick="location.href='{% url 'home' %}'">GO HOME</button>
+                </div>
+            </div>
+        </div>
+{% endblock %}
