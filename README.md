@@ -84,7 +84,7 @@ The project has many features such as:
 * Fall-back fonts, in case Google Fonts are not compatible with the browser - built in with the library
 * Alternate Text' attributes for images, in case the images do not display
 
-<img src="readme-files/alt_labels.png" width="100" style="margin: 0;">
+<img src="readme-files/alt_labels.jpg" width="100" style="margin: 0;">
 
 * @media Queries, to modify content to fit different sized screens
 
