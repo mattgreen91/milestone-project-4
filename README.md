@@ -82,6 +82,7 @@ This project was designed with Balsamiq Wireframes, which can be seen below:
 
 In order to display nice layout I used a Library from [StartBootstrap](https://startbootstrap.com/)
 
+The Product names were taken randomly from[Game](https://www.game.co.uk/) and [Amazon](https://www.amazon.co.uk/), selected by popularity with accurate age and retail prices, which were placed into a spreadsheet before implementing, so the products are more accurate to the current market.  This can be accessed by [clicking here](readme-files/games_list.pdf)
 
 **Accessibility**
 
@@ -267,6 +268,12 @@ In order to set up All-Auth, I followed the steps from All-Auth website, which y
 **Google Authentication**
 
 In order to set up Google Authentication, I followed the steps from All-Auth Providers, which you can view by [clicking here](https://django-allauth.readthedocs.io/en/latest/providers.html#google)
+
+In trial mode you can add test accounts only, but once published the site needs verifying.  This Google is published, so in order for Google to verify the site, I had to add their authenitcated page and view in my code.
+
+<img src="readme-files/url1.png" width="500" style="margin: 0;">
+
+<img src="readme-files/url2.png" width="500" style="margin: 0;">
 
 **Fixtures**
 
