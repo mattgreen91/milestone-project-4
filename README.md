@@ -12,20 +12,19 @@ The website was created using HTML5, CSS, Javascript, JQuery, Python, Django, Po
 
 The website has been designed and tested to be fully functional on all devices, including a drop-down mobile navigation menu for smaller devices.
 
-<img src="readme-files/s1.png" width="300" style="margin: 0;">
-<img src="readme-files/s2.png" width="300" style="margin: 0;">
-<img src="readme-files/s3.png" width="300" style="margin: 0;">
-<img src="readme-files/s4.png" width="300" style="margin: 0;">
-<img src="readme-files/s5.png" width="300" style="margin: 0;">
-<img src="readme-files/s6.png" width="300" style="margin: 0;">
-<img src="readme-files/s7.png" width="300" style="margin: 0;">
+<img src="readme-files/s1.png" width="500" style="margin: 0;">
+<img src="readme-files/s2.png" width="500" style="margin: 0;">
+<img src="readme-files/s3.png" width="500" style="margin: 0;">
+<img src="readme-files/s4.png" width="500" style="margin: 0;">
+<img src="readme-files/s5.png" width="500" style="margin: 0;">
+<img src="readme-files/s6.png" width="500" style="margin: 0;">
+<img src="readme-files/s7.png" width="500" style="margin: 0;">
 <img src="readme-files/s8.png" width="200" style="margin: 0;">
-<img src="readme-files/s9.png" width="200" style="margin: 0;">
-<img src="readme-files/s10.png" width="300" style="margin: 0;">
-<img src="readme-files/s11.png" width="300" style="margin: 0;">
-<img src="readme-files/s12.png" width="300" style="margin: 0;">
-<img src="readme-files/s13.png" width="200" style="margin: 0;">
-<img src="readme-files/s14.png" width="200" style="margin: 0;">
+<img src="readme-files/s9.png" width="500" style="margin: 0;">
+<img src="readme-files/s10.png" width="500" style="margin: 0;">
+<img src="readme-files/s12.png" width="500" style="margin: 0;">
+<img src="readme-files/s13.png" width="150" style="margin: 0;">
+<img src="readme-files/s14.png" width="150" style="margin: 0;">
 <img src="readme-files/s15.png" width="300" style="margin: 0;">
 
  
@@ -74,11 +73,11 @@ The website has been designed and tested to be fully functional on all devices, 
 This project was designed with Balsamiq Wireframes, which can be seen below:
 
 <img src="readme-files/1.png" width="200" style="margin: 0;">
-<img src="readme-files/2.png" width="100" style="margin: 0;">
-<img src="readme-files/3.png" width="200" style="margin: 0;">
-<img src="readme-files/4.png" width="200" style="margin: 0;">
-<img src="readme-files/5.png" width="200" style="margin: 0;">
-<img src="readme-files/6.png" width="200" style="margin: 0;">
+<img src="readme-files/2.png" width="300" style="margin: 0;">
+<img src="readme-files/3.png" width="300" style="margin: 0;">
+<img src="readme-files/4.png" width="300" style="margin: 0;">
+<img src="readme-files/5.png" width="300" style="margin: 0;">
+<img src="readme-files/6.png" width="300" style="margin: 0;">
 
 In order to display nice layout I used a Library from [StartBootstrap](https://startbootstrap.com/)
 
