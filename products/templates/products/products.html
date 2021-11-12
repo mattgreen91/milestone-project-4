@@ -35,9 +35,13 @@
                             {% endif %}
                             {% if product.image %}
                             <!-- Product image-->
-                            <img class="card-img-top card-image" src="{{ product.image.url }}" alt="{{ product.name }}" />
+                            <div>
+                                <img class="card-img-top card-image" src="{{ product.image.url }}" alt="{{ product.name }}" />
+                            </div>
                             {% else %}
-                            <img class="card-img-top" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}" />
+                            <div>
+                                <img class="card-img-top" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}" />
+                            </div>
                             {% endif %}
                             <!-- Product details-->
                             <div class="card-body p-4">
