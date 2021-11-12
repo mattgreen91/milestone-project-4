@@ -232,12 +232,12 @@ else:
 
 # Google Authentication
 ACCOUNT_AUTHENTICATION_METHOD = "email" # Defaults to username_email
-ACCOUNT_USERNAME_REQUIRED = False       # Defaults to True
-ACCOUNT_EMAIL_REQUIRED = True           # Defaults to False
+#ACCOUNT_USERNAME_REQUIRED = False       # Defaults to True
+#ACCOUNT_EMAIL_REQUIRED = True           # Defaults to False
 SOCIALACCOUNT_QUERY_EMAIL = ACCOUNT_EMAIL_REQUIRED
 SOCIALACCOUNT_AUTO_SIGNUP = True
 SOCIALACCOUNT_EMAIL_REQUIRED = False
 ACCOUNT_ADAPTER = "gamestore.adapter.MyLoginAccountAdapter"
 SOCIALACCOUNT_ADAPTER = 'gamestore.adapter.MySocialAccountAdapter'
 LOGIN_URL = "/"
-LOGIN_REDIRECT_URL = "/users/{id}/mytags"
+LOGIN_REDIRECT_URL = "/"
