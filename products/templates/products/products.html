@@ -35,13 +35,9 @@
                             {% endif %}
                             {% if product.image %}
                             <!-- Product image-->
-                            <div>
-                                <img class="card-img-top card-image" src="{{ product.image.url }}" alt="{{ product.name }}" style="max-width: 300px; height: auto;" />
-                            </div>
+                            <img class="card-img-top card-image" src="{{ product.image.url }}" alt="{{ product.name }}" style="width: 100%; height: auto;" />
                             {% else %}
-                            <div>
-                                <img class="card-img-top" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}" style="max-width: 300px; height: auto;" />
-                            </div>
+                            <img class="card-img-top" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}" style="width: 100%; height: auto;" />
                             {% endif %}
                             <!-- Product details-->
                             <div class="card-body p-4">
