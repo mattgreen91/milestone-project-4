@@ -51,11 +51,11 @@ $('.decrement-qty').click(function(e) {
 });
 
  // Make payment on click
- $('.payment-complete').click(function(e) {
-    var form = $(this).parent().parent().parent().parent().prev().prev().find("form");
-    console.log(form);
-    form.submit();
-});
+//  $('.payment-complete').click(function(e) {
+//     var form = $(this).parent().parent().parent().parent().prev().prev().find("form");
+//     console.log(form);
+//     form.submit();
+// });
 
 // Show toast messages
 $('.toast').toast('show');
