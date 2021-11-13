@@ -130,7 +130,6 @@ These error pages have been saved in the templates directory which will override
 - The ability to add number of products to settings, so when sold out it will display unavailable.
 - Stripe Payments to be taken off demo mode, and activated so actual payments can be made
 - Other social accounts such as Discord and Facebook to be options for log in.
-- The option to delete the account.
 
 ## 3. Technologies Used
 
@@ -186,9 +185,7 @@ I did both manual and automated testing for the website.
 
 **Bugs Found**
 
-- The website works perfectly but for some users if cookies are disabled may display message "CSRF Verification failed"
-
-- Google Auth works fine for first time users, however if logged in previously sometimes doesn't display google log-in page, current solution is to login using incognito mode
+- The website works perfectly but for some users if cookies are disabled in their browser, it may display message "CSRF Verification failed"
 
 ## 5. Deployment
 
@@ -268,7 +265,7 @@ In order to set up All-Auth, I followed the steps from All-Auth website, which y
 
 In order to set up Google Authentication, I followed the steps from All-Auth Providers, which you can view by [clicking here](https://django-allauth.readthedocs.io/en/latest/providers.html#google)
 
-In trial mode you can add test accounts only, but once published the site needs verifying.  This Google is published, so in order for Google to verify the site, I had to add their authenitcated page and view in my code.
+In trial mode you can add test accounts only, but once published the site needs verifying.  This Google is published, so in order for Google to verify the site, I had to add their authenticated page and view in my code.
 
 <img src="readme-files/url1.png" width="500" style="margin: 0;">
 
@@ -333,4 +330,5 @@ The project can be opened by [clicking here](https://game-store-uk.herokuapp.com
 - Thanks to Code Institute for training me on Python, Django, Allauth, AWS, PostgreSQL and Stripe.
 - Thanks to my mentor Allen Thomas Varghese for supporting me.
 - Thanks to Slack Community for helping me solve any issues with code not working.
+- Thanks to Stackoverflow community for suggesting ideas to help solve any bugs in my code
 - Thanks to Code Institute Tutors for helping me fix any glitches with the IDE that I came across.
