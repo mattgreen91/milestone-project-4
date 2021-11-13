@@ -106,11 +106,14 @@
                 <!-- Go back button -->
                 <a class="btn btn-outline-dark mt-auto" href="{{request.META.HTTP_REFERER}}"><i
                         class="fas fa-chevron-left"></i> Go back</a>
+                {% if request.user.is_superuser %}
                 <!-- Edit product button -->
                 <a class="btn btn-outline-success mt-auto text-black" href="{% url 'edit_product' product.sku %}">Edit
                     product <i class="fas fa-pencil"></i></a>
+                <!-- Delete product button -->
                 <a class="btn btn-outline-danger mt-auto text-black" data-toggle="modal" data-target="#delete">Delete
                     product <i class="fas fa-trash-alt"></i></a>
+                {% endif %}
             </div>
         </div>
     </div>
