@@ -24,10 +24,6 @@
                         {% endif %}
                     </ul>
                 </li>
-                    {% get_social_accounts user as accounts %}
-                        {% if accounts %}
-                <li class="nav-item"><a class="nav-link" href="{% url 'profile' %}">My Profile</a></li>
-                        {% else %}
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">My Account</a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -37,7 +33,6 @@
                         <li><a class="dropdown-item" href="{% url 'account_reset_password' %}">Reset Password</a></li>
                     </ul>
                 </li>
-                        {% endif %}
                 <li class="nav-item"><a class="nav-link" href="{% url 'account_logout' %}">Logout</a></li>
                 {% else %}
                 <li class="nav-item"><a class="nav-link" href="{% url 'account_login' %}">Login</a></li>
