@@ -33,10 +33,10 @@
                         {% for product in basket_products %}
                             <tr>
                                 <td class="p-3 w-25">
-                                    <img class="img-fluid rounded" src="{{ product.product.image.url }}">
+                                    <img class="img-fluid rounded" src="{{ product.product.image.url }}" alt="{{ product.product.name }}">
                                 </td>
                                 <td class="py-3">
-                                    <p class="my-0"><strong>{{ product.product.name }}</strong></p>
+                                    <p class="my-0"><b>{{ product.product.name }}</b></p>
                                     <p class="my-0 small text-muted">Console: {{ product.product.category.friendly_name }}</p>
                                     <p class="my-0 small text-muted">Age: {{ product.product.age }}</p>
                                     &nbsp;
@@ -92,7 +92,7 @@
                                     <img class="img-fluid rounded" src="{{ product.product.image.url }}">
                                 </td>
                                 <td class="py-3">
-                                    <p class="my-0"><strong>{{ product.product.name }}</strong></p>
+                                    <p class="my-0"><b>{{ product.product.name }}</b></p>
                                     <p class="my-0 small text-muted">Console: {{ product.product.category.friendly_name }}</p>
                                     <p class="my-0 small text-muted">Age: {{ product.product.age }}</p>
                                     &nbsp;
@@ -136,10 +136,10 @@
                             </tr>
                             <tr>
                                 <td class="py-3">
-                                    <p class="my-0"><strong>Subtotal: </strong></p>
+                                    <p class="my-0"><b>Subtotal: </b></p>
                                 </td>
                                 <td class="py-3">
-                                    <p class="my-0"><stong>£{{ product.product.selling_price | calc_subtotal:product.quantity }}</strong></p>
+                                    <p class="my-0"><b>£{{ product.product.selling_price | calc_subtotal:product.quantity }}</b></p>
                                     <hr>
                                 </td>
                             </tr>
@@ -153,7 +153,7 @@
                         <h4 class="mt-4"><strong>Grand Total: £{{ grand_total|floatformat:2 }}</strong></h4>
                         {% if free_delivery_delta > 0 %}
                         <p class="mb-1 text-danger">
-                            Spend another <strong>£{{ free_delivery_delta }}</strong> to qualify for free delivery!
+                            Spend another <b>£{{ free_delivery_delta }}</b> to qualify for free delivery!
                         </p>
                         {% endif %}
                     </div>
