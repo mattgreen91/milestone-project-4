@@ -89,7 +89,7 @@
                         {% for product in basket_products %}
                             <tr>
                                 <td class="p-3 w-25">
-                                    <img class="img-fluid rounded" src="{{ product.product.image.url }}">
+                                    <img class="img-fluid rounded" src="{{ product.product.image.url }}" alt="{{ product.product.name }}">
                                 </td>
                                 <td class="py-3">
                                     <p class="my-0"><b>{{ product.product.name }}</b></p>
@@ -147,7 +147,7 @@
                     </table>
                     <hr>
                     <!-- totals calculation -->
-                    <div class="pt-5 text-center">
+                    <div class="pt-5 text-center"> 
                         <h6><strong>Basket Total: £{{ total|floatformat:2 }}</strong></h6>
                         <h6>Delivery Fee: £{{ delivery|floatformat:2 }}</h6>
                         <h4 class="mt-4"><strong>Grand Total: £{{ grand_total|floatformat:2 }}</strong></h4>
@@ -171,19 +171,18 @@
                     </div>    
                 </div>
             </div>
-                </div>
             {% else %}
-                <!-- if no items in basket, will display basket is empty -->
-                <p class="lead mb-5">Your basket is empty.</p>
-                <div class="row">
-                    <div class="col">
-                        <div class="text-center">
-                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                            <!-- Go back button -->
-                            <a class="btn btn-outline-dark mt-auto" href="{{request.META.HTTP_REFERER}}"><i class="fas fa-chevron-left"></i> Go back</a>
-                        </div>
+            <!-- if no items in basket, will display basket is empty -->
+            <p class="lead mb-5">Your basket is empty.</p>
+            <div class="row">
+                <div class="col">
+                    <div class="text-center">
+                        <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                        <!-- Go back button -->
+                        <a class="btn btn-outline-dark mt-auto" href="{{request.META.HTTP_REFERER}}"><i class="fas fa-chevron-left"></i> Go back</a>
                     </div>
                 </div>
+            </div>
             {% endif %}
         </div>
     </div>
