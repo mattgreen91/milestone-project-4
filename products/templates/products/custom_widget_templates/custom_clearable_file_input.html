@@ -14,7 +14,7 @@
     {{ widget.input_text }}
 {% endif %}
 <span class="btn btn-black rounded-0 btn-file">
-    Select Image <input id="new-image" type="{{ widget.type }}" name="{{ widget.name }}"{% include "django/forms/widgets/attrs.html" %}>
+    Select Image <input id="new-image" type="{{ widget.type }}" name="{{ widget.name }}" accept="image/*" class="border-black rounded-0">
 </span>
 <strong>
     <p class="text-danger" id="filename"></p>
