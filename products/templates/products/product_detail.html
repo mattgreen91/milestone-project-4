@@ -10,14 +10,14 @@
             <div class="text-center">
                 {% if product.image %}
                 <!-- Product name-->
-                <h5 class="fw-bolder">{{ product.name }}
+                <h5 class="fw-bolder">{{ product.name }}</h5>
                     <!-- New badge-->
-                    {% if product.selling_price < product.original_price %} <div class="badge bg-danger text-white">Sale
+                    {% if product.selling_price < product.original_price %} 
+                    <div class="badge bg-danger text-white">Sale
             </div>
             {% elif product.new == True %}
             <div class="badge bg-success text-white">New</div>
             {% endif %}
-            </h5>
             <h5 class="fw">Platform: {{ product.category.friendly_name }}</h5>
         </div>
     </div>
@@ -50,7 +50,7 @@
                 {% endif %}
             </div>
             <!-- Product age -->
-            Age: {{ product.age }} </br>
+            Age: {{ product.age }} <br>
             <!-- Product price-->
             Price: {% if product.original_price == product.selling_price %}
             £{{ product.original_price }}
@@ -87,7 +87,7 @@
             {% csrf_token %}
             ﻿<input type="hidden" name="redirect_url" value="{{ request.path }}">
             <div class="form-row" style="display: flex; height: 50px; line-height: 50px;">
-                <div class="col-3" style="vertical-align: auto;">Quantity:</div>
+                <div class="col-3">Quantity:</div>
                 <div class="input-group col-3" style="width:50px;">
                     <input class="form-control qty_input" type="number" name="quantity" value="1" min="1" max="99"
                         data-item_id="{{ product.sku }}" id="sku_qty_{{ product.sku }}">
