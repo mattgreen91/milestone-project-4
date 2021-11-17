@@ -81,7 +81,7 @@ This project was designed with Balsamiq Wireframes, which can be seen below:
 
 In order to display nice layout I used a Library from [StartBootstrap](https://startbootstrap.com/)
 
-The Product names were taken randomly from[Game](https://www.game.co.uk/) and [Amazon](https://www.amazon.co.uk/), selected by popularity with accurate age and retail prices, which were placed into a spreadsheet before implementing, so the products are more accurate to the current market.  This can be accessed by [clicking here](readme-files/games_list.pdf)
+The Product names were taken randomly from [Game](https://www.game.co.uk/) and [Amazon](https://www.amazon.co.uk/), selected by popularity with accurate age and retail prices, which were placed into a spreadsheet before implementing, so the products are more accurate to the current market.  This can be accessed by [clicking here](readme-files/games_list.pdf)
 
 **Accessibility**
 
@@ -91,6 +91,10 @@ The project has many features such as:
 * Alternate Text' attributes for images, in case the images do not display
 
 <img src="readme-files/alt_labels.jpg" width="300" style="margin: 0;">
+
+* Aria Labels' in navigation menu for screen readers
+
+<img src="readme-files/aria.png" width="300" style="margin: 0;">
 
 * @media Queries, to modify content to fit different sized screens
 
@@ -182,7 +186,7 @@ I used the Google Chrome and Mozilla FireFox developer tools to tweak code when 
 I did both manual and automated testing for the website. 
 - The manual testing can be opened by clicking [here](readme-files/manual_testing.pdf).
 - The automated testing can be opened by clicking [here](readme-files/automated_testing.pdf).
-I also used 'Responsive Viewer' a tool on Chrome, in order to test the pages on different screen sizes, which can be opened by clicking [here](readme-files/screen_sizes.pdf).
+- I also used 'Responsive Viewer' a tool on Chrome, in order to test the pages on different screen sizes, which can be opened by clicking [here](readme-files/screen_sizes.pdf).
 
 **Bugs Found**
 
