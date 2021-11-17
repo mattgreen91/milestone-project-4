@@ -182,6 +182,7 @@ I used the Google Chrome and Mozilla FireFox developer tools to tweak code when 
 I did both manual and automated testing for the website. 
 - The manual testing can be opened by clicking [here](readme-files/manual_testing.pdf).
 - The automated testing can be opened by clicking [here](readme-files/automated_testing.pdf).
+I also used 'Responsive Viewer' a tool on Chrome, in order to test the pages on different screen sizes, which can be opened by clicking [here](readme-files/screen_sizes.pdf).
 
 **Bugs Found**
 
